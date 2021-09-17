@@ -3,18 +3,26 @@ package eu.tutorials.a7_minutesworkoutapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.View
 import android.widget.Toast
 import eu.tutorials.a7_minutesworkoutapp.databinding.ActivityExerciseBinding
 
 class ExerciseActivity : AppCompatActivity() {
 
-    //TODO(Step 1 - Adding a variables for the 10 seconds REST timer.)
+    // - Adding a variables for the 10 seconds REST timer
     //START
     private var restTimer: CountDownTimer? =
         null // Variable for Rest Timer and later on we will initialize it.
     private var restProgress =
         0 // Variable for timer progress. As initial value the rest progress is set to 0. As we are about to start.
     //END
+
+
+    // TODO(Step 2 - Adding a variables for the 30 seconds Exercise timer.)
+    // START
+    private var exerciseTimer: CountDownTimer? = null // Variable for Exercise Timer and later on we will initialize it.
+    private var exerciseProgress = 0 // Variable for the exercise timer progress. As initial value the exercise progress is set to 0. As we are about to start.
+    // END
 
     // create a binding variable
     private var binding:ActivityExerciseBinding? = null
@@ -39,7 +47,7 @@ class ExerciseActivity : AppCompatActivity() {
     }
 
 
-    //TODO(Step 3 - Setting up the Get Ready View with 10 seconds of timer.)-->
+    //Setting up the Get Ready View with 10 seconds of timer
     //START
     /**
      * Function is used to set the timer for REST.
@@ -51,7 +59,7 @@ class ExerciseActivity : AppCompatActivity() {
          * And set the progress to initial which is 0.
          */
         if (restTimer != null) {
-            restTimer!!.cancel()
+            restTimer?.cancel()
             restProgress = 0
         }
 
@@ -60,7 +68,7 @@ class ExerciseActivity : AppCompatActivity() {
     }
     // END
 
-    //TODO(Step 2 - Setting up the 10 seconds timer for rest view and updating it continuously.)-->
+    // Setting up the 10 seconds timer for rest view and updating it continuously.
     //START
     /**
      * Function is used to set the progress of timer using the progress
@@ -87,18 +95,66 @@ class ExerciseActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 // When the 10 seconds will complete this will be executed.
-                Toast.makeText(
-                    this@ExerciseActivity,
-                    "Here now we will start the exercise.",
-                    Toast.LENGTH_SHORT
-                ).show()
+           setupExerciseView()
             }
         }.start()
     }
     //END
 
 
-    //TODO(Step 5 - Destroying the timer when closing the activity or app.)-->
+    // TODO(Step 4 - Setting up the Exercise View with a 30 seconds timer.)
+    // START
+    /**
+     * Function is used to set the progress of the timer using the progress for Exercise View.
+     */
+    private fun setupExerciseView() {
+
+        // Here according to the view make it visible as this is Exercise View so exercise view is visible and rest view is not.
+        binding?.flProgressBar?.visibility = View.INVISIBLE
+        binding?.flExerciseView?.visibility = View.VISIBLE
+
+        /**
+         * Here firstly we will check if the timer is running and it is not null then cancel the running timer and start the new one.
+         * And set the progress to the initial value which is 0.
+         */
+        if (exerciseTimer != null) {
+            exerciseTimer?.cancel()
+            exerciseProgress = 0
+        }
+
+        setExerciseProgressBar()
+    }
+    // END
+
+
+    // TODO(Step 3 - After REST View Setting up the 30 seconds timer for the Exercise view and updating it continuously.)
+    // START
+    /**
+     * Function is used to set the progress of the timer using the progress for Exercise View for 30 Seconds
+     */
+    private fun setExerciseProgressBar() {
+
+        binding?.progressBarExercise?.progress = exerciseProgress
+
+        exerciseTimer = object : CountDownTimer(30000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                exerciseProgress++
+                binding?.progressBarExercise?.progress = 30 - exerciseProgress
+               binding?.tvTimerExercise?.text = (30 - exerciseProgress).toString()
+            }
+
+            override fun onFinish() {
+                Toast.makeText(
+                    this@ExerciseActivity,
+                    "This is 30 seconds completed so now we will add all the exercises.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }.start()
+    }
+    // END
+
+    // Destroying the timer when closing the activity or app
     //START
     /**
      * Here in the Destroy function we will reset the rest timer if it is running.
