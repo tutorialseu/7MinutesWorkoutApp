@@ -111,6 +111,7 @@ class ExerciseActivity : AppCompatActivity() {
 
         // Here according to the view make it visible as this is Exercise View so exercise view is visible and rest view is not.
         binding?.flProgressBar?.visibility = View.INVISIBLE
+        binding?.tvTitle?.text = "Exercise Name"
         binding?.flExerciseView?.visibility = View.VISIBLE
 
         /**
