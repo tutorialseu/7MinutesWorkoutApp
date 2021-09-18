@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--TODO(Step 9 - Adding a circular shape progress bar view as completed state for the Get Ready View.)-->
-<!--START-->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape
@@ -13,4 +11,3 @@
         </shape>
     </item>
 </layer-list>
-<!--END-->
