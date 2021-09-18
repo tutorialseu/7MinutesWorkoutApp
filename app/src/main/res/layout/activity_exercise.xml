@@ -74,8 +74,35 @@
         </LinearLayout>
     </FrameLayout>
 
-    <!--TODO (Step 1 - First add the images to the Drawable folder and adding an imageview to show which is the current exercise along with the Name.)-->
+    <!--TODO (Step 1 - Showing the upcoming exercise name in the Get Ready For View.)-->
     <!--START-->
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/flRestView"
+        android:id="@+id/upcomingLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/tvUpcomingExerciseName"
+        android:text="UPCOMING EXERCISE : "
+        android:textSize="16sp" />
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/upcomingLabel"
+        android:id="@+id/tvUpcomingExerciseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp"
+        android:textColor="#212121"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:text="Exercise Name" />
+    <!--END-->
+    <!-- First add the images to the Drawable folder and adding an imageview to show which is the current exercise along with the Name-->
     <ImageView
         android:id="@+id/ivImage"
         android:layout_width="match_parent"
@@ -87,7 +114,7 @@
         app:layout_constraintBottom_toTopOf="@id/tvExerciseName"
         app:layout_constraintTop_toBottomOf="@id/toolbarExercise" />
 
-    <!-- Todo 2: We also add a textView for ExerciseName and position it below the imageview-->
+    <!--  We also add a textView for ExerciseName and position it below the imageview-->
     <TextView
         android:id="@+id/tvExerciseName"
         android:layout_width="wrap_content"
@@ -101,7 +128,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivImage"
         tools:visibility="visible" />
-    <!-- Todo 3: We also need to change the position of this frame layout to be below the tvExercise-->
+    <!-- We also need to change the position of this frame layout to be below the tvExercise-->
     <FrameLayout
         android:id="@+id/flExerciseView"
         android:layout_width="100dp"

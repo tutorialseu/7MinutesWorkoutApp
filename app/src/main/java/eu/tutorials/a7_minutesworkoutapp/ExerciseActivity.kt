@@ -24,7 +24,7 @@ class ExerciseActivity : AppCompatActivity() {
     private var exerciseProgress = 0 // Variable for the exercise timer progress. As initial value the exercise progress is set to 0. As we are about to start.
     // END
     private var exerciseTimerDuration:Long = 30
-    // TODO(Step 4 - The Variable for the exercise list and current position of exercise here it is -1 as the list starting element is 0.)
+    // The Variable for the exercise list and current position of exercise here it is -1 as the list starting element is 0
     // START
     private var exerciseList: ArrayList<ExerciseModel>? = null // We will initialize the list later.
     private var currentExercisePosition = -1 // Current Position of Exercise.
@@ -47,7 +47,7 @@ class ExerciseActivity : AppCompatActivity() {
         binding?.toolbarExercise?.setNavigationOnClickListener {
             onBackPressed()
         }
-        // TODO(Step 5 - Initializing and Assigning a default exercise list to our list variable.)
+        //Initializing and Assigning a default exercise list to our list variable
         // START
         exerciseList = Constants.defaultExerciseList()
         // END
@@ -61,9 +61,11 @@ class ExerciseActivity : AppCompatActivity() {
      * Function is used to set the timer for REST.
      */
     private fun setupRestView() {
-
+// TODO (Step 3- changing the upcoming exercise label and name visibility.)
         binding?.flRestView?.visibility = View.VISIBLE
         binding?.tvTitle?.visibility = View.VISIBLE
+        binding?.upcomingLabel?.visibility = View.VISIBLE
+        binding?.tvUpcomingExerciseName?.visibility = View.VISIBLE
         binding?.tvExerciseName?.visibility = View.INVISIBLE
         binding?.flExerciseView?.visibility = View.INVISIBLE
         binding?.ivImage?.visibility = View.INVISIBLE
@@ -76,6 +78,11 @@ class ExerciseActivity : AppCompatActivity() {
             restProgress = 0
         }
 
+        // TODO (Step 2 - Setting the upcoming exercise name in the UI element.)
+        // START
+        // Here we have set the upcoming exercise name to the text view
+        // Here as the current position is -1 by default so to selected from the list it should be 0 so we have increased it by +1.
+        binding?.tvUpcomingExerciseName?.text = exerciseList!![currentExercisePosition + 1].getName()
         // This function is used to set the progress details.
         setRestProgressBar()
     }
@@ -122,10 +129,12 @@ class ExerciseActivity : AppCompatActivity() {
      * Function is used to set the progress of the timer using the progress for Exercise View.
      */
     private fun setupExerciseView() {
-
+// TODO (Step 4- changing the upcoming exercise label and name visibility.)
         // Here according to the view make it visible as this is Exercise View so exercise view is visible and rest view is not.
         binding?.flRestView?.visibility = View.INVISIBLE
         binding?.tvTitle?.visibility = View.INVISIBLE
+        binding?.tvUpcomingExerciseName?.visibility = View.INVISIBLE
+        binding?.upcomingLabel?.visibility = View.INVISIBLE
         binding?.tvExerciseName?.visibility = View.VISIBLE
         binding?.flExerciseView?.visibility = View.VISIBLE
         binding?.ivImage?.visibility = View.VISIBLE
@@ -139,7 +148,7 @@ class ExerciseActivity : AppCompatActivity() {
             exerciseProgress = 0
         }
 
-        // TODO(Step 7 - Setting up the current exercise name and image to view to the UI element.)
+        // Setting up the current exercise name and imageview to the UI element.
         // START
         /**
          * Here current exercise name and image is set to exercise view.
@@ -170,7 +179,7 @@ class ExerciseActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                // TODO(Step 8 - Updating the view after completing the 30 seconds exercise.)
+                // Updating the view after completing the 30 seconds exercise
                 // START
                 if (currentExercisePosition < exerciseList?.size!! - 1) {
                     setupRestView()

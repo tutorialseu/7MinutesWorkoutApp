@@ -5,7 +5,7 @@ import java.util.*
 /**
  * Constant Class where you can add the constant values of the project.
  */
-// TODO(Step 3 - Making a default list of exercises in the Constant file along with the name image using the Model Class which later on will be used to show in the UI.)
+// Making a default list of exercises in the Constant file along with the name image using the Model Class which later on will be used to show in the UI
 // START
 class Constants {
     companion object {
