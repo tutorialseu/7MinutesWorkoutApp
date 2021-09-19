@@ -1,5 +1,7 @@
 package eu.tutorials.a7_minutesworkoutapp
 
+import android.media.MediaPlayer
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -35,10 +37,10 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     // END
     // create a binding variable
     private var binding:ActivityExerciseBinding? = null
-
-    // TODO (Step 3 - Variable for Text to Speech which will be initialized later on.)
-    // START
     private var tts: TextToSpeech? = null // Variable for Text to Speech
+    // TODO (Step 1 - Declaring the variable of the media player for playing a notification sound when the exercise is about to start.)
+    // START
+    private var player: MediaPlayer? = null
     // END
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +48,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         binding = ActivityExerciseBinding.inflate(layoutInflater)
 // pass in binding?.root in the content view
         setContentView(binding?.root)
-// then set support action bar and get toolBarExcerciser using the binding
+// then set support action bar and get toolBarExercise using the binding
 //variable
         setSupportActionBar(binding?.toolbarExercise)
 
@@ -75,7 +77,26 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
      * Function is used to set the timer for REST.
      */
     private fun setupRestView() {
-// TODO (Step 3- changing the upcoming exercise label and name visibility.)
+
+
+        // TODO (Step 2 - Playing a notification sound when the exercise is about to start when you are in the rest state
+        //  the sound file is added in the raw folder as resource.)
+        // START
+        /**
+         * Here the sound file is added in to "raw" folder in resources.
+         * And played using MediaPlayer. MediaPlayer class can be used to control playback
+         * of audio/video files and streams.
+         */
+        try {
+            val soundURI =
+                Uri.parse("android.resource://eu.tutorials.a7_minutesworkoutapp/" + R.raw.press_start)
+            player = MediaPlayer.create(applicationContext, soundURI)
+            player?.isLooping = false // Sets the player to be looping or non-looping.
+            player?.start() // Starts Playback.
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        // END
         binding?.flRestView?.visibility = View.VISIBLE
         binding?.tvTitle?.visibility = View.VISIBLE
         binding?.upcomingLabel?.visibility = View.VISIBLE
@@ -227,11 +248,19 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             restProgress = 0
         }
 
-        // TODO (Step 8 - Shutting down the Text to Speech feature when activity is destroyed.)
+        // Shutting down the Text to Speech feature when activity is destroyed
         // START
         if (tts != null) {
             tts!!.stop()
             tts!!.shutdown()
+        }
+        // END
+
+
+        // TODO (Step 3 - When the activity is destroyed if the media player instance is not null then stop it.)
+        // START
+        if(player != null){
+            player!!.stop()
         }
         // END
         super.onDestroy()
