@@ -136,11 +136,10 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/item_circular_color_accent_border"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvExerciseName"
-        tools:visibility="visible">
+        tools:visibility="gone">
 
         <ProgressBar
             android:id="@+id/progressBarExercise"
@@ -172,5 +171,18 @@
                 tools:text="10" />
         </LinearLayout>
     </FrameLayout>
+
+    <!--TODO(Step 1 : Adding the recycler view component and designing item for it.)-->
+    <!--START-->
+    <!--Adding a RecyclerView component and adjusting the view in the design.-->
+    <!--As added the above param in both the views.-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvExerciseStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/flExerciseView"
+       app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="5dp" />
+    <!--END-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

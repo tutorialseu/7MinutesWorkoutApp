@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--TODO(Step 3 : Here we have added a gray circular background which we will use in the recycler view item as background.)-->
+<!--START-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <solid android:color="#C4C4C4" />
+</shape><!--END-->
