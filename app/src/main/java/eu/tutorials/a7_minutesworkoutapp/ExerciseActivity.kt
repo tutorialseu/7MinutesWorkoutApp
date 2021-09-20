@@ -9,6 +9,7 @@ import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import eu.tutorials.a7_minutesworkoutapp.databinding.ActivityExerciseBinding
 import java.util.*
 import kotlin.collections.ArrayList
@@ -42,6 +43,12 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     // START
     private var player: MediaPlayer? = null
     // END
+
+    // TODO(Step 1 : Declaring a variable of an adapter class to bind it to recycler view.)
+    // START
+    // Declaring an exerciseAdapter object which will be initialized later.
+    private var exerciseAdapter: ExerciseStatusAdapter? = null
+    // END
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //inflate the layout
@@ -68,6 +75,12 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         exerciseList = Constants.defaultExerciseList()
         // END
         setupRestView()
+
+        // TODO(Step 3 : Calling the function where we have bound the adapter to recycler view to show the data in the UI.)
+        // START
+        // setting up the exercise recycler view
+        setupExerciseStatusRecyclerView()
+        // END
     }
 
 
@@ -300,6 +313,27 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
      */
     private fun speakOut(text: String) {
         tts!!.speak(text, TextToSpeech.QUEUE_FLUSH, null, "")
+    }
+    // END
+
+
+    /**
+     * Function is used to set up the recycler view to UI and asining the Layout Manager and Adapter Class is attached to it.
+     */
+    // TODO(Step 2 : Binding adapter class to recycler view and setting the recycler view layout manager and passing a list to the adapter.)
+    // START
+    private fun setupExerciseStatusRecyclerView() {
+
+        // Defining a layout manager for the recycle view
+        // Here we have used a LinearLayout Manager with horizontal scroll.
+       binding?.rvExerciseStatus?.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+        // As the adapter expects the exercises list and context so initialize it passing it.
+        exerciseAdapter = ExerciseStatusAdapter(exerciseList!!)
+
+        // Adapter class is attached to recycler view
+        binding?.rvExerciseStatus?.adapter = exerciseAdapter
     }
     // END
 }

@@ -178,7 +178,9 @@
     <!--As added the above param in both the views.-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvExerciseStatus"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/flExerciseView"
        app:layout_constraintBottom_toBottomOf="parent"
