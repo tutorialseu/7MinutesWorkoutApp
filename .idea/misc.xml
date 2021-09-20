@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-anydpi/item_circular_color_gray_background.xml" value="0.18229166666666666" />
+        <entry key="app/src/main/res/drawable-anydpi/item_circular_thin_color_accent_border.xml" value="0.18229166666666666" />
         <entry key="app/src/main/res/drawable/circular_progress_bar.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/drawable/item_circular_color_accent_background.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/drawable/item_circular_color_accent_border.xml" value="0.13333333333333333" />

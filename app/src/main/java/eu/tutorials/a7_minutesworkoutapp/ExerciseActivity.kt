@@ -164,6 +164,12 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             override fun onFinish() {
                 // When the 10 seconds will complete this will be executed.
                 currentExercisePosition++
+
+                // TODO(Step 1 : When we are getting an updated position of exercise set that item in the list as selected and notify the adapter class.)
+                // START
+                exerciseList!![currentExercisePosition].setIsSelected(true) // Current Item is selected
+                exerciseAdapter!!.notifyDataSetChanged() // Notified the current item to adapter class to reflect it into UI.
+                // END
            setupExerciseView()
             }
         }.start()
@@ -230,6 +236,13 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
 
             override fun onFinish() {
+
+                // TODO(Step 2 : We have changed the status of the selected item and updated the status of that, so that the position is set as completed in the exercise list.)
+                // START
+                exerciseList!![currentExercisePosition].setIsSelected(false) // exercise is completed so selection is set to false
+                exerciseList!![currentExercisePosition].setIsCompleted(true) // updating in the list that this exercise is completed
+                exerciseAdapter!!.notifyDataSetChanged() // Notifying the adapter class.
+                // END
                 // Updating the view after completing the 30 seconds exercise
                 // START
                 if (currentExercisePosition < exerciseList?.size!! - 1) {
