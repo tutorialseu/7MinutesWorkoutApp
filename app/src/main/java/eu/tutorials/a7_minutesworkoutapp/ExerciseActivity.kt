@@ -1,5 +1,6 @@
 package eu.tutorials.a7_minutesworkoutapp
 
+import android.app.Dialog
 import android.content.Intent
 import android.media.MediaPlayer
 import android.net.Uri
@@ -12,6 +13,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import eu.tutorials.a7_minutesworkoutapp.databinding.ActivityExerciseBinding
+import eu.tutorials.a7_minutesworkoutapp.databinding.DialogCustomBackConfirmationBinding
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -64,7 +66,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
         binding?.toolbarExercise?.setNavigationOnClickListener {
-            onBackPressed()
+            customDialogForBackButton()
         }
 
         // TODO (Step 4 - Initializing the variable of Text to Speech.)
@@ -340,6 +342,36 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         // Adapter class is attached to recycler view
         binding?.rvExerciseStatus?.adapter = exerciseAdapter
+    }
+    // END
+
+    /**
+     * Function is used to launch the custom confirmation dialog.
+     */
+    //TODO(Step 2 : Performing the steps to show the custom dialog for back button confirmation while the exercise is going on.)
+    // START
+    private fun customDialogForBackButton() {
+        val customDialog = Dialog(this)
+        //Todo: create a binding variable
+         val dialogBinding = DialogCustomBackConfirmationBinding.inflate(layoutInflater)
+        /*Set the screen content from a layout resource.
+         The resource will be inflated, adding all top-level views to the screen.*/
+        //Todo: bind to the dialog
+        customDialog.setContentView(dialogBinding.root)
+        //Todo: to ensure that the user clicks one of the button and that the dialog is
+        //not dismissed when surrounding parts of the screen is clicked
+        customDialog.setCanceledOnTouchOutside(false)
+        dialogBinding.tvYes.setOnClickListener {
+            //Todo We need to specify that we are finishing this activity if not the player
+            // continues beeping even after the screen is not visibile
+            this@ExerciseActivity.finish()
+            customDialog.dismiss() // Dialog will be dismissed
+        }
+        dialogBinding.tvNo.setOnClickListener {
+            customDialog.dismiss()
+        }
+        //Start the dialog and display it on screen.
+        customDialog.show()
     }
     // END
 }

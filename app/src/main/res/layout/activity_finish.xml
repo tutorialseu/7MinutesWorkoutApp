@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginTop="35dp"
-        android:background="@color/colorAccent"
+        android:backgroundTint="@color/colorAccent"
         android:text="FINISH"
         android:textColor="#FFFFFF"
         android:textSize="18sp" />
