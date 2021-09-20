@@ -1,5 +1,6 @@
 package eu.tutorials.a7_minutesworkoutapp
 
+import android.content.Intent
 import android.media.MediaPlayer
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -237,23 +238,15 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
             override fun onFinish() {
 
-                // TODO(Step 2 : We have changed the status of the selected item and updated the status of that, so that the position is set as completed in the exercise list.)
-                // START
-                exerciseList!![currentExercisePosition].setIsSelected(false) // exercise is completed so selection is set to false
-                exerciseList!![currentExercisePosition].setIsCompleted(true) // updating in the list that this exercise is completed
-                exerciseAdapter!!.notifyDataSetChanged() // Notifying the adapter class.
-                // END
-                // Updating the view after completing the 30 seconds exercise
-                // START
                 if (currentExercisePosition < exerciseList?.size!! - 1) {
+                    exerciseList!![currentExercisePosition].setIsSelected(false) // exercise is completed so selection is set to false
+                    exerciseList!![currentExercisePosition].setIsCompleted(true) // updating in the list that this exercise is completed
+                    exerciseAdapter?.notifyDataSetChanged()
                     setupRestView()
                 } else {
-
-                    Toast.makeText(
-                        this@ExerciseActivity,
-                        "Congratulations! You have completed the 7 minutes workout.",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                     finish()
+                  val intent = Intent(this@ExerciseActivity,FinishActivity::class.java)
+                    startActivity(intent)
                 }
                 // END
             }
