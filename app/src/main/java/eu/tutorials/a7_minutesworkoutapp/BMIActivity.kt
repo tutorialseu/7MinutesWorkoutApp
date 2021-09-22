@@ -56,14 +56,22 @@ class BMIActivity : AppCompatActivity() {
         // END
         // Button will calculate the input values in Metric Units
         binding?.btnCalculateUnits?.setOnClickListener {
+            calculateUnits()
+        }
 
+    }
+
+    private fun calculateUnits(){
+        //TODO(Step 2 : Handling the current visible view and calculating US UNITS view input values if they are valid.)
+        // START
+        if (currentVisibleView == METRIC_UNITS_VIEW) {
             // The values are validated.
             if (validateMetricUnits()) {
 
-                // The height value is converted to a float value and divided by 100 to convert it to meter.
+                // The height value is converted to float value and divided by 100 to convert it to meter.
                 val heightValue: Float = binding?.etMetricUnitHeight?.text.toString().toFloat() / 100
 
-                // The weight value is converted to a float value
+                // The weight value is converted to float value
                 val weightValue: Float = binding?.etMetricUnitWeight?.text.toString().toFloat()
 
                 // BMI value is calculated in METRIC UNITS using the height and weight value.
@@ -71,11 +79,43 @@ class BMIActivity : AppCompatActivity() {
 
                 displayBMIResult(bmi)
             } else {
-                Toast.makeText(this@BMIActivity, "Please enter valid values.", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    this@BMIActivity,
+                    "Please enter valid values.",
+                    Toast.LENGTH_SHORT
+                )
+                    .show()
+            }
+        } else {
+
+            // The values are validated.
+            if (validateUsUnits()) {
+
+                val usUnitHeightValueFeet: String =
+                    binding?.etUsMetricUnitHeightFeet?.text.toString() // Height Feet value entered in EditText component.
+                val usUnitHeightValueInch: String =
+                    binding?.etUsMetricUnitHeightInch?.text.toString() // Height Inch value entered in EditText component.
+                val usUnitWeightValue: Float = binding?.etUsMetricUnitWeight?.text.toString()
+                    .toFloat() // Weight value entered in EditText component.
+
+                // Here the Height Feet and Inch values are merged and multiplied by 12 for converting it to inches.
+                val heightValue =
+                    usUnitHeightValueInch.toFloat() + usUnitHeightValueFeet.toFloat() * 12
+
+                // This is the Formula for US UNITS result.
+                // Reference Link : https://www.cdc.gov/healthyweight/assessing/bmi/childrens_bmi/childrens_bmi_formula.html
+                val bmi = 703 * (usUnitWeightValue / (heightValue * heightValue))
+
+                displayBMIResult(bmi) // Displaying the result into UI
+            } else {
+                Toast.makeText(
+                    this@BMIActivity,
+                    "Please enter valid values.",
+                    Toast.LENGTH_SHORT
+                )
                     .show()
             }
         }
-        // END
     }
 
 
@@ -115,6 +155,7 @@ class BMIActivity : AppCompatActivity() {
 
        binding?.llDiplayBMIResult?.visibility = View.INVISIBLE
     }
+
     /**
      * Function is used to validate the input values for METRIC UNITS.
      */
@@ -131,7 +172,29 @@ class BMIActivity : AppCompatActivity() {
     }
     // END
 
+// TODO(Step 1 : Validating the US UNITS view input values.)
+    // START
+    /**
+     * Function is used to validate the input values for US UNITS.
+     */
+    private fun validateUsUnits(): Boolean {
+        var isValid = true
 
+        when {
+            binding?.etUsMetricUnitWeight?.text.toString().isEmpty() -> {
+                isValid = false
+            }
+            binding?.etUsMetricUnitHeightFeet?.text.toString().isEmpty() -> {
+                isValid = false
+            }
+            binding?.etUsMetricUnitHeightInch?.text.toString().isEmpty() -> {
+                isValid = false
+            }
+        }
+
+        return isValid
+    }
+    // END
     /**
      * Function is used to display the result of METRIC UNITS.
      */
