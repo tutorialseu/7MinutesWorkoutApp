@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-anydpi/drawable_radio_group_tab_background.xml" value="0.19895833333333332" />
         <entry key="app/src/main/res/drawable-anydpi/item_circular_color_gray_background.xml" value="0.18229166666666666" />
         <entry key="app/src/main/res/drawable-anydpi/item_circular_thin_color_accent_border.xml" value="0.18229166666666666" />
         <entry key="app/src/main/res/drawable/circular_progress_bar.xml" value="0.20833333333333334" />
+        <entry key="app/src/main/res/drawable/drawable_radio_group_tab_background.xml" value="0.19895833333333332" />
         <entry key="app/src/main/res/drawable/item_circular_color_accent_background.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/drawable/item_circular_color_accent_border.xml" value="0.13333333333333333" />
         <entry key="app/src/main/res/drawable/item_color_accent_border_ripple_background.xml" value="0.13333333333333333" />

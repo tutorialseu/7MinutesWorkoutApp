@@ -24,10 +24,8 @@ class BMIActivity : AppCompatActivity() {
         binding?.toolbarBmiActivity?.setNavigationOnClickListener {
             onBackPressed()
         }
-        // END
 
-        // TODO(Step 3 : Adding a click event to METRIC UNIT Calculate button and after valid input calculating it.)
-        // START
+
         // Button will calculate the input values in Metric Units
         binding?.btnCalculateUnits?.setOnClickListener {
 
@@ -53,8 +51,7 @@ class BMIActivity : AppCompatActivity() {
     }
 
 
-    // TODO(Step 2 : Validating the METRIC UNITS CALCULATION input.)
-    // START
+
     /**
      * Function is used to validate the input values for METRIC UNITS.
      */
@@ -71,8 +68,7 @@ class BMIActivity : AppCompatActivity() {
     }
     // END
 
-    //TODO(Step 4 : Displaying the calculated BMI UI what we have designed earlier.)
-    // START
+
     /**
      * Function is used to display the result of METRIC UNITS.
      */
