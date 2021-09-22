@@ -16,11 +16,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.7MinutesWorkoutApp">
         <activity
+            android:name=".BMIActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
+        <activity
             android:name=".FinishActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
-            />
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name=".ExerciseActivity"
             android:exported="true"
