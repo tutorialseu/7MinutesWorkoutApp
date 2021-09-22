@@ -11,7 +11,7 @@ import java.math.RoundingMode
 
 class BMIActivity : AppCompatActivity() {
 
-    // TODO(Step 2 : Added variables for METRIC and US UNITS views and a variable for displaying the current selected view..)
+    // Added variables for METRIC and US UNITS views and a variable for displaying the current selected view..)
     // START
     companion object {
         private const val METRIC_UNITS_VIEW = "METRIC_UNIT_VIEW" // Metric Unit View
@@ -36,11 +36,11 @@ class BMIActivity : AppCompatActivity() {
         binding?.toolbarBmiActivity?.setNavigationOnClickListener {
             onBackPressed()
         }
-        // TODO(Step 5 : When the activity is launched make METRIC UNITS VIEW visible.)
+        //  When the activity is launched make METRIC UNITS VIEW visible.)
         // START
         makeVisibleMetricUnitsView()
         // END
-         // TODO(Step 6 : Adding a check change listener to the radio group and according to the radio button.)
+         // Adding a check change listener to the radio group and according to the radio button.)
         // START
         // Radio Group change listener is set to the radio group which is added in XML.
         //we use _ for the first value because we don't need it
@@ -62,7 +62,7 @@ class BMIActivity : AppCompatActivity() {
     }
 
     private fun calculateUnits(){
-        //TODO(Step 2 : Handling the current visible view and calculating US UNITS view input values if they are valid.)
+        // Handling the current visible view and calculating US UNITS view input values if they are valid.)
         // START
         if (currentVisibleView == METRIC_UNITS_VIEW) {
             // The values are validated.
@@ -119,7 +119,7 @@ class BMIActivity : AppCompatActivity() {
     }
 
 
-    // TODO(Step 3 : Making a function to make the METRIC UNITS view visible.)
+    // Making a function to make the METRIC UNITS view visible.)
     // START
     /**
      * Function is used to make the METRIC UNITS VIEW visible and hide the US UNITS VIEW.
@@ -139,8 +139,6 @@ class BMIActivity : AppCompatActivity() {
     }
     // END
 
-    // TODO(Step 4 : Making a function to make the US UNITS view visible.)
-    // START
     private fun makeVisibleUsUnitsView() {
         currentVisibleView = US_UNITS_VIEW // Current View is updated here.
         binding?.tilMetricUnitHeight?.visibility = View.INVISIBLE // METRIC  Height UNITS VIEW is InVisible
@@ -172,7 +170,7 @@ class BMIActivity : AppCompatActivity() {
     }
     // END
 
-// TODO(Step 1 : Validating the US UNITS view input values.)
+//  Validating the US UNITS view input values.)
     // START
     /**
      * Function is used to validate the input values for US UNITS.
@@ -249,4 +247,10 @@ class BMIActivity : AppCompatActivity() {
         binding?.tvBMIDescription?.text = bmiDescription // Description is set to TextView
     }
     // END
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
+    }
 }

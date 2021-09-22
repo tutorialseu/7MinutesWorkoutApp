@@ -17,7 +17,9 @@
         android:theme="@style/Theme.7MinutesWorkoutApp">
         <activity
             android:name=".HistoryActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
         <activity
             android:name=".BMIActivity"
             android:exported="true"
