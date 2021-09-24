@@ -5,11 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HistoryActivity">
-    <!-- Todo we position the toolbar top to top of parent-->
+    <!--  we position the toolbar top to top of parent-->
     <androidx.appcompat.widget.Toolbar
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/toolbar_history_activity"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:background="#FFFFFF" />
+
+
+    <!--TODO(Step 1 : Added a RecyclerView to show the list of completed dates in the History Screen UI.)-->
+    <!--START-->
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/toolbar_history_activity"
+            android:id="@+id/tvHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="EXERCISE COMPLETED"
+            android:textSize="18sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            app:layout_constraintTop_toBottomOf="@id/tvHistory"
+            android:id="@+id/rvHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/toolbar_history_activity"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/tvNoDataAvailable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="NO DATA AVAILABLE"
+            android:textColor="#212121"
+            android:textSize="18sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

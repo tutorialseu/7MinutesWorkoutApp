@@ -171,7 +171,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 // When we are getting an updated position of exercise set that item in the list as selected and notify the adapter class.)
                 // START
                 exerciseList!![currentExercisePosition].setIsSelected(true) // Current Item is selected
-                exerciseAdapter!!.notifyDataSetChanged() // Notified the current item to adapter class to reflect it into UI.
+                exerciseAdapter?.notifyDataSetChanged() // Notified the current item to adapter class to reflect it into UI.
                 // END
            setupExerciseView()
             }
