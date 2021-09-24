@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        // TODO(Step 6 : Adding a click event to launch the History Screen Activity from Main Activity.)
+        //  Adding a click event to launch the History Screen Activity from Main Activity.)
         // START
         binding?.flHistory?.setOnClickListener {
             // Launching the History Activity
