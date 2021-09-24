@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-//Todo 5 create the database
+// create the database
 @Database(entities = [HistoryEntity::class],version = 1)
 abstract class HistoryDatabase:RoomDatabase(){
 

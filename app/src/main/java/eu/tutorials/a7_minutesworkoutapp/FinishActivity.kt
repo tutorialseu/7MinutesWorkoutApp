@@ -28,13 +28,13 @@ class FinishActivity : AppCompatActivity() {
             finish()
         }
 
-        //Todo 8: get the dao through the database in the application class
+        //get the dao through the database in the application class
         val dao = (application as WorkOutApp).db.historyDao()
         addDateToDatabase(dao)
     }
 
     // START
-    /** Todo 7
+    /**
      * Function is used to insert the current system date in the sqlite database.
      */
     private fun addDateToDatabase(historyDao: HistoryDao) {
