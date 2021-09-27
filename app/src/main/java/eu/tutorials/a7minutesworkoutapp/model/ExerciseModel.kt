@@ -1,4 +1,4 @@
-package eu.tutorials.a7_minutesworkoutapp
+package eu.tutorials.a7minutesworkoutapp.model
 
 /**
  * This is used for exercise details it is a custom model class.

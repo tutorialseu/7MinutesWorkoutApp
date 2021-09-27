@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="eu.tutorials.a7_minutesworkoutapp">
+    package="eu.tutorials.a7minutesworkoutapp">
     <!-- Todo 1 enable TTS for Android 11 -->
     <queries>
         <intent>
@@ -9,7 +9,7 @@
     </queries>
 
     <application
-        android:name=".WorkOutApp"
+        android:name="eu.tutorials.a7minutesworkoutapp.WorkOutApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,27 +17,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.7MinutesWorkoutApp">
         <activity
-            android:name=".HistoryActivity"
+            android:name="eu.tutorials.a7minutesworkoutapp.activities.HistoryActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
         <activity
-            android:name=".BMIActivity"
+            android:name="eu.tutorials.a7minutesworkoutapp.activities.BMIActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
-            android:name=".FinishActivity"
+            android:name="eu.tutorials.a7minutesworkoutapp.activities.FinishActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
-            android:name=".ExerciseActivity"
+            android:name="eu.tutorials.a7minutesworkoutapp.activities.ExerciseActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MaterialComponents.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name="eu.tutorials.a7minutesworkoutapp.activities.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">

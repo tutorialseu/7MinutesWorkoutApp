@@ -1,11 +1,11 @@
-package eu.tutorials.a7_minutesworkoutapp
+package eu.tutorials.a7minutesworkoutapp.activities
 
 import android.os.Bundle
 import android.view.View
-import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import eu.tutorials.a7_minutesworkoutapp.databinding.ActivityBmiBinding
+import eu.tutorials.a7minutesworkoutapp.R
+import eu.tutorials.a7minutesworkoutapp.databinding.ActivityBmiBinding
 import java.math.BigDecimal
 import java.math.RoundingMode
 

@@ -1,11 +1,13 @@
-package eu.tutorials.a7_minutesworkoutapp
+package eu.tutorials.a7minutesworkoutapp.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
-import eu.tutorials.a7_minutesworkoutapp.databinding.ActivityExerciseBinding
-import eu.tutorials.a7_minutesworkoutapp.databinding.ActivityFinishBinding
+import eu.tutorials.a7minutesworkoutapp.database.HistoryDao
+import eu.tutorials.a7minutesworkoutapp.database.HistoryEntity
+import eu.tutorials.a7minutesworkoutapp.WorkOutApp
+import eu.tutorials.a7minutesworkoutapp.databinding.ActivityFinishBinding
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
@@ -28,14 +30,14 @@ class FinishActivity : AppCompatActivity() {
             finish()
         }
 
-        //get the dao through the database in the application class
+        //get the dao through the eu.tutorials.a7_minutesworkoutapp.database in the application class
         val dao = (application as WorkOutApp).db.historyDao()
         addDateToDatabase(dao)
     }
 
     // START
     /**
-     * Function is used to insert the current system date in the sqlite database.
+     * Function is used to insert the current system date in the sqlite eu.tutorials.a7_minutesworkoutapp.database.
      */
     private fun addDateToDatabase(historyDao: HistoryDao) {
 

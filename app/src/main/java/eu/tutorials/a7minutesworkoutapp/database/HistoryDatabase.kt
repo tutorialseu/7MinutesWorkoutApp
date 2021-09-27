@@ -1,23 +1,24 @@
-package eu.tutorials.a7_minutesworkoutapp
+package eu.tutorials.a7minutesworkoutapp.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-// create the database
+
+// create the eu.tutorials.a7_minutesworkoutapp.database
 @Database(entities = [HistoryEntity::class],version = 1)
 abstract class HistoryDatabase:RoomDatabase(){
 
-    abstract fun historyDao():HistoryDao
+    abstract fun historyDao(): HistoryDao
 
     /**
      * Define a companion object, this allows us to add functions on the HistoryDatabase class.
      */
     companion object {
         /**
-         * INSTANCE will keep a reference to any database returned via getInstance.
+         * INSTANCE will keep a reference to any eu.tutorials.a7_minutesworkoutapp.database returned via getInstance.
          *
-         * This will help us avoid repeatedly initializing the database, which is expensive.
+         * This will help us avoid repeatedly initializing the eu.tutorials.a7_minutesworkoutapp.database, which is expensive.
          *
          *  The value of a volatile variable will never be cached, and all writes and
          *  reads will be done to and from the main memory. It means that changes made by one
@@ -27,12 +28,12 @@ abstract class HistoryDatabase:RoomDatabase(){
         private var INSTANCE: HistoryDatabase? = null
 
         /**
-         * Helper function to get the database.
+         * Helper function to get the eu.tutorials.a7_minutesworkoutapp.database.
          *
-         * If a database has already been retrieved, the previous database will be returned.
-         * Otherwise, create a new database.
+         * If a eu.tutorials.a7_minutesworkoutapp.database has already been retrieved, the previous eu.tutorials.a7_minutesworkoutapp.database will be returned.
+         * Otherwise, create a new eu.tutorials.a7_minutesworkoutapp.database.
          *
-         * This function is threadsafe, and callers should cache the result for multiple database
+         * This function is threadsafe, and callers should cache the result for multiple eu.tutorials.a7_minutesworkoutapp.database
          * calls to avoid overhead.
          *
          * This is an example of a simple Singleton pattern that takes another Singleton as an
@@ -44,7 +45,7 @@ abstract class HistoryDatabase:RoomDatabase(){
          * @param context The application context Singleton, used to get access to the filesystem.
          */
         fun getInstance(context: Context): HistoryDatabase {
-            // Multiple threads can ask for the database at the same time, ensure we only initialize
+            // Multiple threads can ask for the eu.tutorials.a7_minutesworkoutapp.database at the same time, ensure we only initialize
             // it once by using synchronized. Only one thread may enter a synchronized block at a
             // time.
             synchronized(this) {
@@ -53,7 +54,7 @@ abstract class HistoryDatabase:RoomDatabase(){
                 // Smart cast is only available to local variables.
                 var instance = INSTANCE
 
-                // If instance is `null` make a new database instance.
+                // If instance is `null` make a new eu.tutorials.a7_minutesworkoutapp.database instance.
                 if (instance == null) {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
@@ -66,7 +67,7 @@ abstract class HistoryDatabase:RoomDatabase(){
                         // https://medium.com/androiddevelopers/understanding-migrations-with-room-f01e04b07929
                         .fallbackToDestructiveMigration()
                         .build()
-                    // Assign INSTANCE to the newly created database.
+                    // Assign INSTANCE to the newly created eu.tutorials.a7_minutesworkoutapp.database.
                     INSTANCE = instance
                 }
 

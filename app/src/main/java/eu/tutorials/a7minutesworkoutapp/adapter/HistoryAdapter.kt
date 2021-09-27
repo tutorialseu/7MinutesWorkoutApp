@@ -1,10 +1,10 @@
-package eu.tutorials.a7_minutesworkoutapp
+package eu.tutorials.a7minutesworkoutapp.adapter
 
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import eu.tutorials.a7_minutesworkoutapp.databinding.ItemHistoryRowBinding
+import eu.tutorials.a7minutesworkoutapp.databinding.ItemHistoryRowBinding
 
 // TODO(Step 2 : Created a adapter class to bind the to RecyclerView to show the list of completed dates in History Screen.)
 // START

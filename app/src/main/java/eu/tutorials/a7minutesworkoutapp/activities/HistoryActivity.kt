@@ -1,12 +1,14 @@
-package eu.tutorials.a7_minutesworkoutapp
+package eu.tutorials.a7minutesworkoutapp.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import eu.tutorials.a7_minutesworkoutapp.databinding.ActivityHistoryBinding
+import eu.tutorials.a7minutesworkoutapp.WorkOutApp
+import eu.tutorials.a7minutesworkoutapp.adapter.HistoryAdapter
+import eu.tutorials.a7minutesworkoutapp.database.HistoryDao
+import eu.tutorials.a7minutesworkoutapp.databinding.ActivityHistoryBinding
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -33,7 +35,7 @@ class HistoryActivity : AppCompatActivity() {
         binding?.toolbarHistoryActivity?.setNavigationOnClickListener {
             onBackPressed()
         }
-//Todo 3: get the dao through the database in the application class
+//Todo 3: get the dao through the eu.tutorials.a7_minutesworkoutapp.database in the application class
         val dao = (application as WorkOutApp).db.historyDao()
         getAllCompletedDates(dao)
     }

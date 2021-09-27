@@ -1,11 +1,13 @@
-package eu.tutorials.a7_minutesworkoutapp
+package eu.tutorials.a7minutesworkoutapp.adapter
 
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import eu.tutorials.a7_minutesworkoutapp.databinding.ItemExerciseStatusBinding
+import eu.tutorials.a7minutesworkoutapp.model.ExerciseModel
+import eu.tutorials.a7minutesworkoutapp.R
+import eu.tutorials.a7minutesworkoutapp.databinding.ItemExerciseStatusBinding
 
 // TODO(Step 1 : Creating an adapter class for RecyclerView using the item designed for it and along with Exercise Model class.)
 // START
@@ -54,12 +56,16 @@ class ExerciseStatusAdapter(val items: ArrayList<ExerciseModel>) :
             }
             model.getIsCompleted() -> {
                 holder.tvItem.background =
-                    ContextCompat.getDrawable(holder.itemView.context, R.drawable.item_circular_color_accent_background)
+                    ContextCompat.getDrawable(holder.itemView.context,
+                        R.drawable.item_circular_color_accent_background
+                    )
                 holder.tvItem.setTextColor(Color.parseColor("#FFFFFF"))
             }
             else -> {
                 holder.tvItem.background =
-                    ContextCompat.getDrawable(holder.itemView.context, R.drawable.item_circular_color_gray_background)
+                    ContextCompat.getDrawable(holder.itemView.context,
+                        R.drawable.item_circular_color_gray_background
+                    )
                 holder.tvItem.setTextColor(Color.parseColor("#212121"))
             }
         }

@@ -1,4 +1,4 @@
-package eu.tutorials.a7_minutesworkoutapp
+package eu.tutorials.a7minutesworkoutapp.activities
 
 import android.app.Dialog
 import android.content.Intent
@@ -10,10 +10,13 @@ import android.os.CountDownTimer
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import eu.tutorials.a7_minutesworkoutapp.databinding.ActivityExerciseBinding
-import eu.tutorials.a7_minutesworkoutapp.databinding.DialogCustomBackConfirmationBinding
+import eu.tutorials.a7minutesworkoutapp.Constants
+import eu.tutorials.a7minutesworkoutapp.model.ExerciseModel
+import eu.tutorials.a7minutesworkoutapp.adapter.ExerciseStatusAdapter
+import eu.tutorials.a7minutesworkoutapp.R
+import eu.tutorials.a7minutesworkoutapp.databinding.ActivityExerciseBinding
+import eu.tutorials.a7minutesworkoutapp.databinding.DialogCustomBackConfirmationBinding
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -247,7 +250,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     setupRestView()
                 } else {
                      finish()
-                  val intent = Intent(this@ExerciseActivity,FinishActivity::class.java)
+                  val intent = Intent(this@ExerciseActivity, FinishActivity::class.java)
                     startActivity(intent)
                 }
                 // END

@@ -1,4 +1,4 @@
-package eu.tutorials.a7_minutesworkoutapp
+package eu.tutorials.a7minutesworkoutapp.database
 
 import androidx.room.Dao
 import androidx.room.Insert

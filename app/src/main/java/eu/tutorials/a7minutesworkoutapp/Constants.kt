@@ -1,5 +1,6 @@
-package eu.tutorials.a7_minutesworkoutapp
+package eu.tutorials.a7minutesworkoutapp
 
+import eu.tutorials.a7minutesworkoutapp.model.ExerciseModel
 import java.util.*
 
 /**
