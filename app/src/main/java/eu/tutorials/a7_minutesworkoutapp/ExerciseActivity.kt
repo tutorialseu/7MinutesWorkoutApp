@@ -10,7 +10,7 @@ import android.widget.Toast
 import eu.tutorials.a7_minutesworkoutapp.databinding.ActivityExerciseBinding
 import java.util.*
 import kotlin.collections.ArrayList
-
+//Todo 3 implement TextToSpeechListener
 class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     // - Adding a variables for the 10 seconds REST timer
@@ -36,7 +36,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     // create a binding variable
     private var binding:ActivityExerciseBinding? = null
 
-    // TODO (Step 3 - Variable for Text to Speech which will be initialized later on.)
+    // TODO (Step 2 - Variable for Text to Speech which will be initialized later on.)
     // START
     private var tts: TextToSpeech? = null // Variable for Text to Speech
     // END
@@ -75,7 +75,6 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
      * Function is used to set the timer for REST.
      */
     private fun setupRestView() {
-// TODO (Step 3- changing the upcoming exercise label and name visibility.)
         binding?.flRestView?.visibility = View.VISIBLE
         binding?.tvTitle?.visibility = View.VISIBLE
         binding?.upcomingLabel?.visibility = View.VISIBLE
@@ -143,7 +142,6 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
      * Function is used to set the progress of the timer using the progress for Exercise View.
      */
     private fun setupExerciseView() {
-// TODO (Step 4- changing the upcoming exercise label and name visibility.)
         // Here according to the view make it visible as this is Exercise View so exercise view is visible and rest view is not.
         binding?.flRestView?.visibility = View.INVISIBLE
         binding?.tvTitle?.visibility = View.INVISIBLE
@@ -161,8 +159,6 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             exerciseTimer?.cancel()
             exerciseProgress = 0
         }
-        // TODO (Step 7 - Get the current exercise name from the list and pass it to the speak out method which we have created.)
-        // START
         speakOut(exerciseList!![currentExercisePosition].getName())
         // END
         // Setting up the current exercise name and imageview to the UI element.
@@ -227,7 +223,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             restProgress = 0
         }
 
-        // TODO (Step 8 - Shutting down the Text to Speech feature when activity is destroyed.)
+        // TODO (Step 7 - Shutting down the Text to Speech feature when activity is destroyed.)
         // START
         if (tts != null) {
             tts!!.stop()
