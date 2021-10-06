@@ -33,21 +33,18 @@ class HistoryActivity : AppCompatActivity() {
         binding?.toolbarHistoryActivity?.setNavigationOnClickListener {
             onBackPressed()
         }
-//Todo 3: get the dao through the database in the application class
+
         val dao = (application as WorkOutApp).db.historyDao()
         getAllCompletedDates(dao)
     }
 
-
-    // TODO(Step 2 : Created a function to get the list of completed dates from the History Table.)
-    // START
     /**
      * Function is used to get the list exercise completed dates.
      */
     private fun getAllCompletedDates(historyDao: HistoryDao) {
         lifecycleScope.launch {
           historyDao.fetchALlDates().collect { allCompletedDatesList->
-              // TODO(Step 3 : Now here the dates which were printed in log.
+              // TODO(Step 3 :here the dates which were printed in log.
               //  We will pass that list to the adapter class which we have created and bind it to the recycler view.)
               // START
               if (allCompletedDatesList.isNotEmpty()) {
