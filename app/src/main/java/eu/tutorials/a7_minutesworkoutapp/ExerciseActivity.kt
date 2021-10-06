@@ -38,7 +38,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     // create a binding variable
     private var binding:ActivityExerciseBinding? = null
     private var tts: TextToSpeech? = null // Variable for Text to Speech
-    // TODO (Step 1 - Declaring the variable of the media player for playing a notification sound when the exercise is about to start.)
+    // TODO (Step 2 - Declaring the variable of the media player for playing a notification sound when the exercise is about to start.)
     // START
     private var player: MediaPlayer? = null
     // END
@@ -59,8 +59,6 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             onBackPressed()
         }
 
-        // TODO (Step 4 - Initializing the variable of Text to Speech.)
-        // START
         tts = TextToSpeech(this, this)
         // END
         //Initializing and Assigning a default exercise list to our list variable
@@ -79,7 +77,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private fun setupRestView() {
 
 
-        // TODO (Step 2 - Playing a notification sound when the exercise is about to start when you are in the rest state
+        // TODO (Step 3 - Playing a notification sound when the exercise is about to start when you are in the rest state
         //  the sound file is added in the raw folder as resource.)
         // START
         /**
@@ -164,7 +162,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
      * Function is used to set the progress of the timer using the progress for Exercise View.
      */
     private fun setupExerciseView() {
-// TODO (Step 4- changing the upcoming exercise label and name visibility.)
+
         // Here according to the view make it visible as this is Exercise View so exercise view is visible and rest view is not.
         binding?.flRestView?.visibility = View.INVISIBLE
         binding?.tvTitle?.visibility = View.INVISIBLE
@@ -182,8 +180,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             exerciseTimer?.cancel()
             exerciseProgress = 0
         }
-        // TODO (Step 7 - Get the current exercise name from the list and pass it to the speak out method which we have created.)
-        // START
+
         speakOut(exerciseList!![currentExercisePosition].getName())
         // END
         // Setting up the current exercise name and imageview to the UI element.
@@ -257,7 +254,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         // END
 
 
-        // TODO (Step 3 - When the activity is destroyed if the media player instance is not null then stop it.)
+        // TODO (Step 4 - When the activity is destroyed if the media player instance is not null then stop it.)
         // START
         if(player != null){
             player!!.stop()
@@ -274,9 +271,6 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
      * Called to signal the completion of the TextToSpeech engine initialization.
      */
     override fun onInit(status: Int) {
-
-        // TODO (Step 5 - After variable initializing set the language after a "success"ful result.)
-        // START
         if (status == TextToSpeech.SUCCESS) {
             // set US English as language for tts
             val result = tts?.setLanguage(Locale.US)
@@ -293,8 +287,6 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     // END
 
 
-    // TODO (Step 6 - Making a function to speak the text.)
-    // START
     /**
      * Function is used to speak the text that we pass to it.
      */
