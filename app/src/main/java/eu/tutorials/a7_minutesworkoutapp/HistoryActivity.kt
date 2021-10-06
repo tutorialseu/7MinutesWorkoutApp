@@ -31,7 +31,10 @@ class HistoryActivity : AppCompatActivity() {
         binding?.toolbarHistoryActivity?.setNavigationOnClickListener {
             onBackPressed()
         }
-//Todo 3: get the dao through the database in the application class
+        /**  Todo 3: get the dao through the database in the application class
+         *  then call getAllCompletedDates method and pass in the dao
+         */
+
         val dao = (application as WorkOutApp).db.historyDao()
         getAllCompletedDates(dao)
     }
