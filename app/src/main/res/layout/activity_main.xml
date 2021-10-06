@@ -34,8 +34,6 @@
             android:textSize="22sp"
             android:textStyle="bold" />
     </FrameLayout>
-<!-- Todo Position bmi frame layout to the start of history frame layout and start of parent
- -->
     <FrameLayout
         android:id="@+id/flBMI"
         android:layout_width="70dp"
@@ -56,8 +54,7 @@
             android:textSize="22sp"
             android:textStyle="bold" />
     </FrameLayout>
-    <!-- Todo position the bmi text below the bmi frame layout and center
-        -->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,7 +66,6 @@
         app:layout_constraintEnd_toEndOf="@id/flBMI"
         app:layout_constraintStart_toStartOf="@id/flBMI"
         app:layout_constraintTop_toBottomOf="@id/flBMI" />
-<!-- Todo Position history framelayout to end of bmi frame layout and end of parent-->
     <FrameLayout
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,9 +85,6 @@
             android:contentDescription="@string/image"
             android:src="@drawable/ic_calendar" />
     </FrameLayout>
-
-    <!-- Todo position the history text below the history frame layout and center
-    -->
     <TextView
         app:layout_constraintTop_toBottomOf="@id/flHistory"
         app:layout_constraintStart_toStartOf="@id/flHistory"
