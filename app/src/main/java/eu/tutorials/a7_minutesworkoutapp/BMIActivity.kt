@@ -11,8 +11,6 @@ import java.math.RoundingMode
 
 class BMIActivity : AppCompatActivity() {
 
-    // TODO(Step 2 : Added variables for METRIC and US UNITS views and a variable for displaying the current selected view..)
-    // START
     companion object {
         private const val METRIC_UNITS_VIEW = "METRIC_UNIT_VIEW" // Metric Unit View
         private const val US_UNITS_VIEW = "US_UNIT_VIEW" // US Unit View
@@ -36,15 +34,7 @@ class BMIActivity : AppCompatActivity() {
         binding?.toolbarBmiActivity?.setNavigationOnClickListener {
             onBackPressed()
         }
-        // TODO(Step 5 : When the activity is launched make METRIC UNITS VIEW visible.)
-        // START
-        makeVisibleMetricUnitsView()
-        // END
-         // TODO(Step 6 : Adding a check change listener to the radio group and according to the radio button.)
-        // START
-        // Radio Group change listener is set to the radio group which is added in XML.
-        //we use _ for the first value because we don't need it
-        binding?.rgUnits?.setOnCheckedChangeListener { _, checkedId: Int ->
+       binding?.rgUnits?.setOnCheckedChangeListener { _, checkedId: Int ->
 
             // Here if the checkId is METRIC UNITS view then make the view visible else US UNITS view.
             if (checkedId == R.id.rbMetricUnits) {
@@ -118,9 +108,6 @@ class BMIActivity : AppCompatActivity() {
         }
     }
 
-
-    // TODO(Step 3 : Making a function to make the METRIC UNITS view visible.)
-    // START
     /**
      * Function is used to make the METRIC UNITS VIEW visible and hide the US UNITS VIEW.
      */
@@ -137,10 +124,7 @@ class BMIActivity : AppCompatActivity() {
 
         binding?.llDiplayBMIResult?.visibility = View.INVISIBLE
     }
-    // END
 
-    // TODO(Step 4 : Making a function to make the US UNITS view visible.)
-    // START
     private fun makeVisibleUsUnitsView() {
         currentVisibleView = US_UNITS_VIEW // Current View is updated here.
         binding?.tilMetricUnitHeight?.visibility = View.INVISIBLE // METRIC  Height UNITS VIEW is InVisible

@@ -106,10 +106,7 @@
             android:inputType="numberDecimal"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
-    <!--positioned below tilMetricUnitWeight-->
 
-    <!--start-->
-    <!--Todo add us unit views-->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_below="@id/tilMetricUnitWeight"
         android:id="@+id/tilMetricUsUnitHeightFeet"
