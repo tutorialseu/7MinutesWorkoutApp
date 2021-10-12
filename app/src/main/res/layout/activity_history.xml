@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HistoryActivity">
-    <!-- Todo we position the toolbar top to top of parent-->
+    <!-- Todo 10 we position the toolbar top to top of parent-->
     <androidx.appcompat.widget.Toolbar
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/toolbar_history_activity"

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="eu.tutorials.a7_minutesworkoutapp">
-    <!-- Todo 1 enable TTS for Android 11 -->
     <queries>
         <intent>
             <action android:name="android.intent.action.TTS_SERVICE" />
@@ -15,6 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.7MinutesWorkoutApp">
+        <!--TODO(Step 13 : Modifying the attributes for the History Screen Activity.)-->
         <activity
             android:name=".HistoryActivity"
             android:exported="true"
