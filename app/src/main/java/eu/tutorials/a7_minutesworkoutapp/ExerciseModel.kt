@@ -4,7 +4,7 @@ package eu.tutorials.a7_minutesworkoutapp
  * This is used for exercise details it is a custom model class.
  * with getter setter functions and a constructor
  */
-// TODO(Step 2 - Making a model class and adding parameters which can be used later as per requirement.)
+// TODO(Step 4 - Making a model class and adding parameters which can be used later as per requirement.)
 // START
 class ExerciseModel(
     private var id: Int,

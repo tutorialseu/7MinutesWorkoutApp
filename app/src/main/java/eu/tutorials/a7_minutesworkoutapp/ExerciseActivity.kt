@@ -24,7 +24,7 @@ class ExerciseActivity : AppCompatActivity() {
     private var exerciseProgress = 0 // Variable for the exercise timer progress. As initial value the exercise progress is set to 0. As we are about to start.
     // END
     private var exerciseTimerDuration:Long = 30
-    // TODO(Step 4 - The Variable for the exercise list and current position of exercise here it is -1 as the list starting element is 0.)
+    // TODO(Step 6 - The Variable for the exercise list and current position of exercise here it is -1 as the list starting element is 0.)
     // START
     private var exerciseList: ArrayList<ExerciseModel>? = null // We will initialize the list later.
     private var currentExercisePosition = -1 // Current Position of Exercise.
@@ -47,7 +47,7 @@ class ExerciseActivity : AppCompatActivity() {
         binding?.toolbarExercise?.setNavigationOnClickListener {
             onBackPressed()
         }
-        // TODO(Step 5 - Initializing and Assigning a default exercise list to our list variable.)
+        // TODO(Step 7 - Initializing and Assigning a default exercise list to our list variable.)
         // START
         exerciseList = Constants.defaultExerciseList()
         // END
@@ -107,7 +107,8 @@ class ExerciseActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                // When the 10 seconds will complete this will be executed.
+                // TODO(Step 8 - Increasing the current position of the exercise after rest view.)
+                // START
                 currentExercisePosition++
            setupExerciseView()
             }
@@ -139,7 +140,7 @@ class ExerciseActivity : AppCompatActivity() {
             exerciseProgress = 0
         }
 
-        // TODO(Step 7 - Setting up the current exercise name and image to view to the UI element.)
+        // TODO(Step 9 - Setting up the current exercise name and image to view to the UI element.)
         // START
         /**
          * Here current exercise name and image is set to exercise view.
@@ -170,7 +171,7 @@ class ExerciseActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                // TODO(Step 8 - Updating the view after completing the 30 seconds exercise.)
+                // TODO(Step 10 - Updating the view after completing the 30 seconds exercise.)
                 // START
                 if (currentExercisePosition < exerciseList?.size!! - 1) {
                     setupRestView()
