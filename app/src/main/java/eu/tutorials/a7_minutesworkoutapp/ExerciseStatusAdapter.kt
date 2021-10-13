@@ -7,8 +7,6 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import eu.tutorials.a7_minutesworkoutapp.databinding.ItemExerciseStatusBinding
 
-// TODO(Step 1 : Creating an adapter class for RecyclerView using the item designed for it and along with Exercise Model class.)
-// START
 class ExerciseStatusAdapter(val items: ArrayList<ExerciseModel>) :
     RecyclerView.Adapter<ExerciseStatusAdapter.ViewHolder>() {
 
@@ -41,11 +39,7 @@ class ExerciseStatusAdapter(val items: ArrayList<ExerciseModel>) :
         val model: ExerciseModel = items[position]
 
         holder.tvItem.text = model.getId().toString()
-        // TODO(Step 4 : Updating the current item and the completed item in the UI and changing the background and text color according to it..)
-        // START
-        // Updating the background and text color according to the flags that is in the list.
-        // A link to set text color programmatically and same way we can set the drawable background also instead of color.
-        // https://stackoverflow.com/questions/8472349/how-to-set-text-color-to-a-text-view-programmatically
+       // https://stackoverflow.com/questions/8472349/how-to-set-text-color-to-a-text-view-programmatically
         when {
             model.getIsSelected() -> {
                 holder.tvItem.background =

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--TODO(Step 3 : Design the finish screen layout.)-->
+<!--TODO(Step 5 : Design the finish screen layout.)-->
 <!--START-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"

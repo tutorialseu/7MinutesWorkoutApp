@@ -15,7 +15,7 @@ class FinishActivity : AppCompatActivity() {
         binding = ActivityFinishBinding.inflate(layoutInflater)
 //Todo 3: bind the layout to this Activity
         setContentView(binding?.root)
-//Todo 4: Replace kotlin synthetic with viewbinding
+//Todo 4: attach the layout to this activity
         setSupportActionBar(binding?.toolbarFinishActivity)
         if (supportActionBar != null) {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -25,7 +25,7 @@ class FinishActivity : AppCompatActivity() {
         }
         //END
 
-        //TODO(Step 5 : Adding a click event to the Finish Button.)
+        //TODO(Step 6 : Adding a click event to the Finish Button.)
         //START
         binding?.btnFinish?.setOnClickListener {
             finish()
