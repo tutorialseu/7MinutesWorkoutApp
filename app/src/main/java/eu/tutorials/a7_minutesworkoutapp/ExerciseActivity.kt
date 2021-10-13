@@ -35,7 +35,10 @@ class ExerciseActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        setupRestView()
+        //TODO(Step 4 - Calling the function to make it visible on screen.)-->
+        //START
+        setupRestView() // REST View is set in this function
+        //END
     }
 
 
