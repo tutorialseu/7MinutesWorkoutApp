@@ -73,9 +73,6 @@
                 tools:text="10" />
         </LinearLayout>
     </FrameLayout>
-
-    <!--TODO (Step 1 - Showing the upcoming exercise name in the Get Ready For View.)-->
-    <!--START-->
     <TextView
         app:layout_constraintTop_toBottomOf="@id/flRestView"
         android:id="@+id/upcomingLabel"
@@ -171,12 +168,7 @@
                 tools:text="10" />
         </LinearLayout>
     </FrameLayout>
-
-    <!--TODO(Step 1 : Adding the recycler view component and designing item for it.)-->
-    <!--START-->
-    <!--Adding a RecyclerView component and adjusting the view in the design.-->
-    <!--As added the above param in both the views.-->
-    <androidx.recyclerview.widget.RecyclerView
+<androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvExerciseStatus"
         android:layout_width="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
