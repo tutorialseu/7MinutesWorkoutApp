@@ -13,7 +13,7 @@ class ExerciseActivity : AppCompatActivity() {
         binding = ActivityExerciseBinding.inflate(layoutInflater)
 //Todo 3 pass in binding?.root in the content view
         setContentView(binding?.root)
-//Todo 4: then set support action bar and get toolBarExcerciser using the binding
+//Todo 5: then set support action bar and get toolBarExcerciser using the binding
 //variable
         setSupportActionBar(binding?.toolbarExercise)
 

@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".ExerciseActivity">
-
+    <!--TODO(Step 4 - Adding a toolbar to display a title)-->
+    <!--Step 4 START-->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarExercise"
         android:layout_width="match_parent"
@@ -28,6 +29,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!--TODO(Step 6 - Adding a view for the Get Ready Screen with a progress bar and remaining time text for the timer.)-->
+    <!--Step 6 START-->
     <FrameLayout
         android:id="@+id/flProgressBar"
         android:layout_width="100dp"
