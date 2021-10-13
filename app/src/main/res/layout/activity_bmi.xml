@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--TODO(Step 4 : Added a toolbar in the BMI calculator activity layout.)-->
+<!--TODO(Step 6 : Added a toolbar in the BMI calculator activity layout.)-->
 <!--START-->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"

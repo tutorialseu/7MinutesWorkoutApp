@@ -34,7 +34,8 @@
             android:textSize="22sp"
             android:textStyle="bold" />
     </FrameLayout>
-
+    <!--TODO(Step 1 : Designing a button to call the BMI calculator feature.)-->
+    <!--START-->
     <FrameLayout
         android:id="@+id/flBMI"
         android:layout_width="70dp"
