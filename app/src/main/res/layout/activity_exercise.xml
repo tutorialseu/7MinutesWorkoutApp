@@ -72,6 +72,8 @@
         </LinearLayout>
     </FrameLayout>
 
+    <!--TODO(Step 1 - Adding an Exercise View along with a 30 seconds timer.)-->
+    <!--START-->
     <FrameLayout
         android:id="@+id/flExerciseView"
         android:layout_width="100dp"

@@ -95,6 +95,8 @@ class ExerciseActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 // When the 10 seconds will complete this will be executed.
+                // TODO(Step 5 - After completing 10 Seconds of the REST timer start the 30 seconds of Start Exercise View.)
+                // START
            setupExerciseView()
             }
         }.start()
