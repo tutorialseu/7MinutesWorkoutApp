@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="main_screen_main_layout_padding">5dp</dimen>
+    <!--END-->
+</resources>
